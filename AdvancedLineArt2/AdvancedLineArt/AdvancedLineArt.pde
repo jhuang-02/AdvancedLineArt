@@ -37,10 +37,11 @@ void setup() {
     // Draw an arc for every 100th pixel
     //   CONDITION1   AND  CONDITION2
     if ( (x > 0) && (x % 7 == 0) && (y > 0) && (y % 7 == 0) ) {
-      arc(x, y, diameter, diameter, 1, PI+QUARTER_PI, PIE);  // Draw at (x, y) with given diameter
+      strokeWeight(diameter);
+      line(x, y, x + 3, y + 1);  // Draw at (x, y) with given diameter
       
       // draw the arc to the PDF
-      vectorImage.arc(x, y, diameter, diameter, 0, PI+QUARTER_PI, PIE); // draw circle at (x, y) with given diameter
+      vectorImage.line(x, y, x + 3, y + 1); // draw circle at (x, y) with given diameter
 
     }
     

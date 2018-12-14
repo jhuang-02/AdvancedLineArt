@@ -3,11 +3,13 @@ void setup(){
 size(500, 500);
 // Background color white
 background(255);
+noFill();
 }
 void draw(){
-float x = random(0, 500);
-float y = random(0, 500);
+  // random offset
+float x = random(-100, 100);
+float y = random(-100, 100);
 float size = random(0, 50);
-ellipse(x, y, size, size);
+ellipse(mouseX + x, mouseY + y, size, size);
 
 }
