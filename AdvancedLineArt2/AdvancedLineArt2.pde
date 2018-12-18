@@ -29,20 +29,18 @@ void setup() {
     float b = 255 - brightness(bitmapImage.pixels[position]);  
     float diameter = map(b, 0, 255, 2, 5);        
     
-    // Position of the Arc
+    // Position of the line
     int x = position % width;
     int y = position / width;
     
-    // Draw an arc for every 100th pixel
-    //   CONDITION1   AND  CONDITION2
-    if ( (x > 0) && (x % 7 == 0) && (y > 0) && (y % 7 == 0) ) {
+      // Draw line with different stroke weight for every 100th pixel
+      if ( (x > 0) && (x % 7 == 0) && (y > 0) && (y % 7 == 0) ) {
       strokeWeight(diameter);
       line(x, y, x + diameter, y + 1 + diameter);  // Draw at (x, y) with given diameter
       
-      // draw the arc to the PDF
+      // draw the line with different stroke weight to the PDF
       vectorImage.line(x, y, x + diameter, y + 1 + diameter);
-      vectorImage.strokeWeight(diameter);   // draw circle at (x, y) with given diameter
-
+      vectorImage.strokeWeight(diameter);   
     }
     
     // Increment the position

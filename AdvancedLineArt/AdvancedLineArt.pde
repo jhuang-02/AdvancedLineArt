@@ -1,3 +1,4 @@
+// PLEASE PRINT THIS IMAGE !
 import processing.pdf.*;
 PImage bitmapImage;
 PGraphics vectorImage;
@@ -6,7 +7,6 @@ PGraphics vectorImage;
 void setup() {
   //  WIDTH  HEIGHT
   size(600, 600); // size of canvas matches bitmapImage image
-  
   noFill();
   strokeWeight(2);
   background(255);
@@ -34,18 +34,16 @@ void setup() {
     int x = position % width;
     int y = position / width;
     
-    // Draw an arc for every 100th pixel
-    //   CONDITION1   AND  CONDITION2
-    if ( (x > 0) && (x % 7 == 0) && (y > 0) && (y % 7 == 0) ) {
-      arc(x, y, diameter, diameter, 1, PI+QUARTER_PI, PIE);  // Draw at (x, y) with given diameter
+      // Draw an arc for every 100th pixel
+      if ( (x > 0) && (x % 7 == 0) && (y > 0) && (y % 7 == 0) ) {
+      arc(x, y, diameter, diameter, 0, PI+QUARTER_PI, PIE);  
       
       // draw the arc to the PDF
-      vectorImage.arc(x, y, diameter, diameter, 0, PI+QUARTER_PI, PIE); // draw circle at (x, y) with given diameter
-
+      vectorImage.arc(x, y, diameter, diameter, 0, PI+QUARTER_PI, PIE); 
     }
     
-    // Increment the position
-    position += 1;
+      // Increment the position
+      position += 1;
     
   }
   
